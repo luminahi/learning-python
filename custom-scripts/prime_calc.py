@@ -1,12 +1,16 @@
 """module for a lab challenge"""
+from math import sqrt
 
 def is_prime_number(number: int) -> bool:
     """function to calculate prime numbers"""
     if number < 2:
         return False
-    for i in range(2, number):
+    max_range = sqrt(number)
+    i = 2
+    while i <= max_range:
         if number % i == 0:
             return False
+        i += 1
     return True
 
 def write_prime_numbers(filename: str) -> None:
